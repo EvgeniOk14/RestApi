@@ -1,0 +1,38 @@
+server:
+  port: 8089
+
+spring:
+
+  application:
+    name: microservices2
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: oew
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
+    show-sql: true
+
+    hbm2ddl:
+      auto: update
+
+    http:
+      encoding:
+        charset: UTF-8
+
+    thymeleaf:
+      prefix: classpath:/templates/
+      suffix: .html
+      encoding: UTF-8
+      mode: HTML
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
